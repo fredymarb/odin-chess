@@ -12,7 +12,16 @@ module Slideable
 
         break unless @board.in_bounds?([row, col])
 
-        moves << new_location
+        if @board.empty?(new_location)
+          moves << new_location
+        else
+          if enemy?(new_location)
+            moves << new_location
+            break
+          end
+
+          break
+        end
       end
     end
 
