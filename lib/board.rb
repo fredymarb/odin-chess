@@ -22,8 +22,14 @@ class Board
 
     "#{col}#{row}"
   end
+
+  def to_arr(notation)
+    row = 8 - notation[1].to_i
+    col = notation[0].ord - 'a'.ord
+    [row, col]
+  end
 end
 
 board = Board.new
 board.display_board
-puts board.to_notation([4, 7])
+p board.to_arr('e8')
