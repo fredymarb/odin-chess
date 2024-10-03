@@ -12,15 +12,15 @@ module Stepable
       next unless @board.in_bounds?([row, col])
 
       if @board.empty?(new_location)
+        moves << new_location
+      else
+        if enemy?(new_location)
           moves << new_location
-        else
-          if enemy?(new_location)
-            moves << new_location
-            next
-          end
-
           next
         end
+
+        next
+      end
     end
 
     moves
