@@ -22,7 +22,7 @@ class Board
       puts '|'
       puts row
     end
-    puts '    a   b   c   d   e   f   g   h'.freeze
+    puts '     a   b   c   d   e   f   g   h'.freeze
   end
 
   def to_notation(arr)
