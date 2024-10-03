@@ -14,7 +14,16 @@ class Board
     end
     puts '    a   b   c   d   e   f   g   h'.freeze
   end
+
+  def to_notation(arr)
+    file = ('a'..'h').to_a
+    row = 8 - arr[0]
+    col = file[arr[1]]
+
+    "#{col}#{row}"
+  end
 end
 
 board = Board.new
 board.display_board
+puts board.to_notation([4, 7])
