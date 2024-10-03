@@ -14,12 +14,12 @@ class Board
   end
 
   def display_board
-    row = '  +---+---+---+---+---+---+---+---+'
+    row = '   +---+---+---+---+---+---+---+---+'
 
     puts row
     @grid.each_with_index do |line, index|
-      print(8 - index)
-      puts " |#{line.join('   |')}   |"
+      print "#{8 - index}  |" + line.map { |piece| piece.nil? ? '   ' : " #{piece} " }.join('|')
+      puts '|'
       puts row
     end
     puts '    a   b   c   d   e   f   g   h'.freeze
