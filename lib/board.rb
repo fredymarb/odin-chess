@@ -8,6 +8,11 @@ class Board
     @grid[row][col] = piece
   end
 
+  def [](notation)
+    row, col = to_arr(notation)
+    @grid[row][col]
+  end
+
   def display_board
     row = '  +---+---+---+---+---+---+---+---+'
 
