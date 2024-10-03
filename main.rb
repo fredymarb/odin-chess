@@ -1,3 +1,4 @@
+require_relative 'lib/board'
 require_relative 'lib/pieces'
 
 board = Board.new
