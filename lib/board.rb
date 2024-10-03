@@ -14,15 +14,15 @@ class Board
   end
 
   def display_board
-    row = '   +---+---+---+---+---+---+---+---+'
+    row = '  +---+---+---+---+---+---+---+---+'
 
     puts row
     @grid.each_with_index do |line, index|
-      print "#{8 - index}  |" + line.map { |piece| piece.nil? ? '   ' : " #{piece} " }.join('|')
+      print "#{8 - index} |" + line.map { |piece| piece.nil? ? '   ' : " #{piece} " }.join('|')
       puts '|'
       puts row
     end
-    puts '     a   b   c   d   e   f   g   h'.freeze
+    puts '    a   b   c   d   e   f   g   h'.freeze
   end
 
   def to_notation(arr)
@@ -39,8 +39,12 @@ class Board
     [row, col]
   end
 
-  def in_bounds?(loc)
-    row, col = loc
+  def in_bounds?(arr)
+    row, col = arr
     (row >= 0 && row < 8) && (col >= 0 && col < 8)
+  end
+
+  def empty?(notation)
+    self[notation].nil?
   end
 end
