@@ -39,7 +39,3 @@ class Board
     [row, col]
   end
 end
-
-board = Board.new
-board.display_board
-p board.to_arr('e8')
