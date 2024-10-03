@@ -38,4 +38,9 @@ class Board
     col = notation[0].ord - 'a'.ord
     [row, col]
   end
+
+  def in_bounds?(loc)
+    row, col = loc
+    (row >= 0 && row < 8) && (col >= 0 && col < 8)
+  end
 end
