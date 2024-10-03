@@ -1,12 +1,10 @@
-require_relative 'lib/board'
-require_relative 'lib/slideable'
-require_relative 'lib/piece'
-require_relative 'lib/rook'
-require_relative 'lib/bishop'
-require_relative 'lib/queen'
+require_relative 'lib/pieces'
 
 board = Board.new
-board.display_board
+board['e4'] = Knight.new(board, 'e4', :white)
 
-puts board.empty?('d4')
-puts board.empty?('c4')
+piece = board['e4'].available_moves
+piece.each do |move|
+  board[move] = 'o'
+end
+board.display_board
