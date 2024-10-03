@@ -3,6 +3,11 @@ class Board
     @grid = Array.new(8) { Array.new(8, nil) }
   end
 
+  def []=(notation, piece)
+    row, col = to_arr(notation)
+    @grid[row][col] = piece
+  end
+
   def display_board
     row = '  +---+---+---+---+---+---+---+---+'
 
