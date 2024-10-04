@@ -16,7 +16,7 @@ class Pawn < Piece
     moves << to_notation(one_forward) if empty?(to_notation(one_forward))
 
     # move pawn two steps forward if the spot is empty
-    moves << to_notation(two_forward) if can_move_two_steps(one_forward, two_forward)
+    moves << to_notation(two_forward) if can_move_two_steps?(one_forward, two_forward)
 
     # left capture
     moves << to_notation(left_capture) if can_capture?(left_capture)
